@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import {  useState } from 'react';
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
+import Navigation from './views/components/Navigation'
+import HomePage from './views/HomePage';
+import './cssRes/app.css'
+import UpdateReg from './views/components/updateRegister';
+import useFetch from './useFetch';
+
 
 function App() {
+  const { data : futurEvents , isPending, error} =  useFetch("/api/MERN/Events/future")
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <BrowserRouter>
+    <div>
+    <Navigation />
+    <Routes>
+      <Route path='/Home' element = { <HomePage  />}/>
+      <Route path='/UpdateRegister' element={ <UpdateReg />} />  
+    </Routes>
     </div>
+    </BrowserRouter>
   );
 }
 

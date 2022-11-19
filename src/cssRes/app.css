@@ -1,0 +1,219 @@
+@font-face {
+    font-family: "Baloo 2";
+    src: url('Baloo2-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: "Heebo";
+    src: url('Heebo-VariableFont_wght.ttf');
+}
+.main{
+    width: 90vw;
+    height: 75vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* background-color: rgb(255, 0, 170); */
+
+}
+.logo{
+    margin-left: 3%;    
+}
+
+.homeRank{
+    margin-left: 4%;
+    margin-top: 4%;
+    color: white;
+    font-family: 'DM Serif Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 33px;  
+}
+ul{
+    list-style-image:url('checkBox.png');
+}
+.name{
+    margin-left: 6%;
+}
+.eventDate{
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #F3764A;
+}
+.eventL{
+    font-family: 'DM Serif Display';
+    margin-left: 5%;
+}
+.homeLabel{
+    margin-top: 5%;
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight:bolder;
+    font-size: 2rem;
+    line-height: 46px;
+    text-align: center;
+    color: #1A8EF1;
+    width: 339px;
+    height: fit-content;
+    background: #1d2226;
+    border-radius: 42px;
+    align-self: center;
+}
+.homebox{
+    display: flex;
+    flex-direction: column;
+    background: #2D353B;
+    border-radius: 32px;
+    box-shadow: -1px 5px 12px 9px rgba(0, 0, 0, 0.15);
+    height: 100%;
+    transition: 1s;
+}
+.homebox li, .eventL{
+    font-weight:lighter;
+    font-family: "Heebo";
+}
+
+.homebox a{
+    color: white;
+    text-decoration: none;
+}
+
+.hover:hover{
+    width: 90%;
+    box-shadow: -7px 8px 35px -12px rgba(0,0,0,0.99) ;
+    -webkit-box-shadow: -7px 8px 35px -12px rgba(0,0,0,0.99) ;
+    -moz-box-shadow: -7px 8px 35px -12px rgba(0,0,0,0.99) ;
+}
+.homeTop{
+    width: 31%;
+}
+.homeFut{
+    width: 27%;
+}
+.centerBody{
+    display: flex;
+    flex-direction: row;
+    height: 76vh;
+    width: 90vw;
+    justify-content: space-evenly;
+    /* background-color: yellow; */
+}
+
+
+
+
+.navBar{
+    margin-top: 2%;
+    height: 18vh;
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: baseline;
+    column-gap: 30%;
+    /* background: blue; */
+}
+
+.nav a{
+    text-decoration: none;
+}
+.nav{
+    position: relative;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 3%;
+    color:white;
+    width: fit-content;
+    align-self: flex-end;
+    gap: 15px;
+    background: #49535B;
+    border: 1px solid #1B1F24;
+    padding: 8px 0px;
+    z-index: 4;
+
+}
+.nav::before {
+    content: "";
+    position: absolute;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-right: 1px solid #1B1F24;
+    border-top: 1px solid #1B1F24;
+    border-bottom: 1px solid #1B1F24;
+    width: 7%;
+    height: 100%;
+    right: -7%;
+    background: #49535B;
+    z-index: 2;
+}
+.nav::after {
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-left: 1px solid #1B1F24;
+    border-top: 1px solid #1B1F24;
+    border-bottom: 1px solid #1B1F24;
+    content: "";
+    position: absolute;
+    width: 7%;
+    height: 100%;
+    left: -7%;
+    background: #49535B;
+    z-index: 2;
+}
+.nav a{
+    transition-timing-function: cubic-bezier(.96,.98,.23,1);
+}
+.nav a:hover{
+    color: #FDBC22;
+}
+.navEl{
+font-family: 'Baloo 2';
+font-style: normal;
+font-weight: 500;
+font-size: 1.2rem;
+line-height: 32px;
+text-align: center;
+color: #FFFFFF;
+}
+
+.prizeStack{
+    margin-top: -2%;
+    width: fit-content;
+    height: 100%;
+    /* background-color: #1A8EF1; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start
+}
+.prize{
+   width: 20vw;
+   height: 20vh;
+   background: #2D353B;
+   border-radius: 32px;
+   margin-bottom: 1%;
+}
+.prizeHeader{
+    width: 40%;
+    height: 29px;
+    align-self: center;
+    border-radius: 14.5px;
+    background-color: #2D353B;
+    font-family: 'Baloo 2';
+    color: #1A8EF1;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+}
+.Gold{
+    border: 2px solid #FFC334;
+}
+.Silver{
+    border: 2px solid #C0C0C0;
+}
+.Copper{
+    border: 2px solid #B87333;
+}
