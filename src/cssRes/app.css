@@ -1,11 +1,86 @@
-@font-face {
-    font-family: "Baloo 2";
-    src: url('Baloo2-VariableFont_wght.ttf');
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
 }
+.up-arrow {
+    width: 0;
+    height: 0;
+    border: solid 5px transparent;
+    background: transparent;
+    border-bottom: solid 7px #61717D;;
+    border-top-width: 0;
+    cursor: pointer;
+}
+
+.down-arrow {
+    width: 0;
+    height: 0;
+    border: solid 5px transparent;
+    background: transparent;
+    border-top: solid 7px #61717D;
+    border-bottom-width: 0;
+    margin-top:1px;
+    cursor: pointer;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;800&display=swap');
+
 @font-face {
     font-family: "Heebo";
     src: url('Heebo-VariableFont_wght.ttf');
 }
+@font-face {
+    font-family: "Inter";
+    src: url('Inter-VariableFont_slnt\,wght.ttf');
+}
+.loadingScreen{
+    position: absolute;
+    top: -15%;
+    left: -2%;
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.loadingLogo, .loadingText{
+    animation: loading 2.5s infinite;
+}   
+.loadingText{
+    margin-top: 5%;
+    font-size: 2rem;
+    color: #F3764A;
+
+}
+
+@keyframes loading {
+    0%{
+        filter:  grayscale(100%)
+    }
+    20%{
+        filter:  grayscale(80%);
+    }
+    40%{
+        filter:  grayscale(60%)
+    }
+    60%{
+        filter:  grayscale(40%)
+    }
+    80%{
+        filter:  grayscale(20%)
+    }
+    100%{
+        filter:  grayscale(0%)
+    }
+
+}
+
+
+
+
 .main{
     width: 90vw;
     height: 75vh;
@@ -18,12 +93,10 @@
 .logo{
     margin-left: 3%;    
 }
-
 .homeRank{
     margin-left: 4%;
     margin-top: 4%;
     color: white;
-    font-family: 'DM Serif Display';
     font-style: normal;
     font-weight: 400;
     font-size: 1.5rem;
@@ -47,8 +120,7 @@ ul{
 .homeLabel{
     margin-top: 5%;
     font-family: 'Baloo 2';
-    font-style: normal;
-    font-weight:bolder;
+    font-weight: 800;
     font-size: 2rem;
     line-height: 46px;
     text-align: center;
@@ -78,8 +150,9 @@ ul{
     text-decoration: none;
 }
 
-.hover:hover{
+.hover:hover, .homebox li::marker{
     width: 90%;
+    border-radius: 32px; 
     box-shadow: -7px 8px 35px -12px rgba(0,0,0,0.99) ;
     -webkit-box-shadow: -7px 8px 35px -12px rgba(0,0,0,0.99) ;
     -moz-box-shadow: -7px 8px 35px -12px rgba(0,0,0,0.99) ;
@@ -216,4 +289,343 @@ color: #FFFFFF;
 }
 .Copper{
     border: 2px solid #B87333;
+}
+
+.RegisterPage{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 75vw;
+    height: 70vh;
+    left: 15%;
+    top: 25%;
+    background: #2D353B;
+    box-shadow: -1px 5px 20px 9px rgba(0, 0, 0, 0.15);
+    border-radius: 32px;
+}
+.registerLabel{
+    width: fit-content;
+    padding: 0% 2%;
+    height: 4%;
+    background: #020F1A;
+    border-radius: 42px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 17px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    color: #239AED;
+    position: relative;
+    right: -5%;
+    top: 7%;
+}
+
+.registerField{
+
+    height: 70%;
+    width: 90%;
+    /* background-color: #1A8EF1; */
+    align-self: center;
+    margin-top: 4%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10%;
+}
+.inputField{
+    display: flex;
+    flex-direction: column;
+    row-gap: 9%;
+    height: 100%;
+    width: 40%;
+    /* background-color: red; */
+    
+}
+.input{
+    height: 10%;
+    background: #49535A;
+    border-style: none;
+    border-radius: 42px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+.idNgrade{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.input:nth-child(1),.input:nth-child(2), .input:nth-child(5) {
+    width: 100%;
+}
+.input:nth-child(4){
+    width: 60%;
+}
+#idNumber, #grade{
+    height: 100%;
+}
+#idNumber{
+    width: 60%;
+}
+#grade{
+    width: 30%;
+}
+.input::placeholder{
+    color: #59666F;
+}
+.eventsAttend{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    /* background-color: #1A8EF1; */
+}
+
+#eventSearch{
+    width: 70%;
+    height: 8%;
+    align-self: center;
+    position: relative;
+    top: -5%;
+    background: #4E5E6A;
+    border-radius: 42px;
+    border-style: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #62696D;
+}
+
+.events{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 85%;
+    background: #49535A;
+    border-radius: 42px;
+    margin-bottom: 10%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.filter{
+    align-self: center;
+    position: relative;
+    display: flex;
+    top: 8%;
+    width: 80%;
+    height: 8%;
+    background: #0A1E2E;
+    border-radius: 42px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.NameFilter{
+  
+  margin-right: 20%;  
+}
+.type{
+    cursor: pointer;
+    margin-bottom: 1%;
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #61717D;
+}
+
+.activities{
+    position: relative;
+    top: 10%;
+    left: 8%;
+}
+
+
+.actLi{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'DM Serif Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 34px;
+    text-align: center;
+    color: #FFFFFF;
+ }
+
+ .act:nth-child(2){
+    color: #F3764A;
+ }
+ 
+ .act:nth-child(3){
+    color: #FDBC22;
+ }
+ .sport{
+    color : #24FF00;
+ }
+ 
+ .registerBut{
+    align-self: center;
+    border-style: none;
+    width: 20%;
+    height: 51px;
+    left: 532px;
+    top: 836px;
+    background: #1D2226;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 42px;
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 51px;
+    cursor: pointer;
+    color: #FFFFFF;
+ }
+
+ .activated{
+    list-style-image: url("checkedBox.png");
+ }
+
+ .popUp{
+    /* background-color: white; */
+    overflow: hidden;
+    position: absolute;
+    width: 80vw;
+    height: 70vh;
+    background: transparent;
+    z-index: 2;
+ }
+
+ .rankSection{
+    width: 80%;
+    height: 70vh;
+    background: #2D353B;
+    border-radius: 32px;
+    margin: 0% auto;
+    padding: 1% 0%;
+}
+
+.rankInner{
+    width: 80%;
+    height: 90%;
+    margin: 0% auto;
+    margin-top: 0.5%;
+    background: #4A565F;
+    box-shadow: -1px 5px 12px 9px rgba(0, 0, 0, 0.15);
+    border-radius: 47px;
+    overflow-y: scroll;
+}
+.rankInner::-webkit-scrollbar {
+    display: none;
+}
+.rankSearch{
+    width: 70%;
+    height: 7%;
+    margin-left: 15%;
+    background: rgba(19, 45, 66, 0.52);
+    box-shadow: -1px 5px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 42px;
+    border-style: none;    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #59666F;
+
+}
+
+.rankFilter, .studRank{
+    width: 95%;
+    height: 8%;
+    margin: 0% auto;
+    position: relative;
+    top: 2%;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.1rem;
+    line-height: 30px;
+    text-align: center;
+    color: #FFFFFF;
+    column-gap: 20%;
+}
+.rankLine{
+    width: 91%;
+    height: 1px ;
+    background: rgba(56, 61, 82, 0.58);
+    border-style: none;
+}
+.rankFilter{
+    position: sticky;
+    z-index: 2;
+    background: #052239;
+    box-shadow: -1px 5px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 42px;
+    margin-bottom: 2%;  
+}
+.rankName, .rankFilters{
+    margin-top: 0.5%;
+    display: flex;
+    flex-direction: row;    
+    justify-content:space-around;
+}
+.rankName{
+    margin-left: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    column-gap: 30%;
+    width: 20%;
+}
+.rankFilters{
+    width :70%;
+}
+
+.rName{
+    width: fit-content;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    justify-content: flex-start;
+    position: relative;
+    right: -20%;
+}
+.rGrade{
+    /* background-color: green; */
+    position: relative;
+    right: 7%;
+    width: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }

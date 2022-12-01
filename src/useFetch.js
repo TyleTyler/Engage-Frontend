@@ -1,14 +1,19 @@
 import {useState, useEffect} from 'react';
 
+
+
+
 let useFetch = (url) =>{
+
+
     const [error, setError] = useState(null)
     const [data, setData] = useState(null)
     const [isPending, setPending] = useState(true)
-    const controller = new AbortController();
-    const signal = controller.signal
+
 
     useEffect(()=>{
-        fetch(url, {signal}).then(res =>{
+        fetch(url).then(res =>{
+            console.log(res)
             if(!res.ok){
                 throw Error('Could not get data')
             }
@@ -20,9 +25,7 @@ let useFetch = (url) =>{
         }).catch(e=>{
             setPending(false)
             setError(e.message)
-            controller.abort()
         })
-        return controller.abort()
         }, [url])
     return { data, isPending, error}
 }

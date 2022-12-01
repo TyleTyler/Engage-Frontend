@@ -6,11 +6,12 @@ const Nav = () => {
             <img src={ logo } alt="Logo.png" className="logo" />
             <nav className="nav">
                 <Link to="/Home" className="navEl"> Home </Link> | 
-                <Link to= "/UpdateRegister" className='navEl'> Update/Register</Link> | 
-                <a href = "/Ranking" className='navEl'> Ranking </a> | 
-                <a href = "/Reports" className='navEl'> Reports </a>|
-                <a href= "/Events" className="navEl"> Events </a> | 
-                <a href = "/About-us" className="navEl"> About Us</a>  
+                <Link to= "/UpdateRegister" className='navEl'> Register</Link> | 
+                <Link to= "/Ranking" className='navEl'> Ranking </Link> | 
+                <Link to= "/Reports" className='navEl'> Reports </Link>|
+                <Link to="/Winners" className='navEl'> Winners</Link> |
+                <Link to= "/Events" className="navEl"> Events </Link> | 
+                <Link to= "/About-us" className="navEl"> About Us</Link>  
             </nav>
         </div>
       );

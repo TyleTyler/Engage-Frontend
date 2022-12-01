@@ -3,21 +3,35 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import Navigation from './views/components/Navigation'
 import HomePage from './views/HomePage';
 import './cssRes/app.css'
-import UpdateReg from './views/components/updateRegister';
+import UpdateReg from './views/updateRegister';
 import useFetch from './useFetch';
+
+import Loading from './views/components/loading';
+import Ranking from './views/ranking';
+
 
 
 function App() {
-  const { data : futurEvents , isPending, error} =  useFetch("/api/MERN/Events/future")
+
+  //Destructuring values from useFetch and my endpoint
+  const { data : futureEvents , isPending : ePend, error : evError} =  useFetch("/api/MERN/Events/future")
+  const { data : top10 ,isPending : sPend, error: stError } = useFetch("/api/MERN/Students/top10")
+  
+
+
+
+
   return (
     <BrowserRouter>
-    <div>
-    <Navigation />
+  { ePend && sPend && <Loading /> }
+    {futureEvents && top10 && <div>
+   <Navigation /> 
     <Routes>
-      <Route path='/Home' element = { <HomePage  />}/>
+     <Route path='/Home' element={<HomePage futureData={ futureEvents } top10 ={top10}/>}/>
       <Route path='/UpdateRegister' element={ <UpdateReg />} />  
+      <Route path='/Ranking' element= {<Ranking />} />
     </Routes>
-    </div>
+    </div>}
     </BrowserRouter>
   );
 }
