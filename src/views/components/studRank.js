@@ -4,13 +4,13 @@ const StudentRanking = ({rank, name, qPoints, tPoints, grade}) => {
         <div>
             <div className="studRank">
               <span className="rankName"> 
-                    <text> {rank + 1}</text>
-                    <text  className="rName"> {name} </text>
+                    <div> {rank + 1}</div>
+                    <div  className="rName"> {name} </div>
                 </span>
                 <span className="rankFilters"> 
-                    <text className="rGrade"> {grade}</text>
-                    <text>{qPoints}</text>
-                    <text>{tPoints}</text>
+                    <div className="rGrade"> {grade}</div>
+                    <div>{qPoints}</div>
+                    <div>{tPoints}</div>
                 </span>
             </div>
             <hr className="rankLine"/>

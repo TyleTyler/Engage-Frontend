@@ -512,12 +512,12 @@ color: #FFFFFF;
  }
 
  .popUp{
-    /* background-color: white; */
+    background-color: white;
     overflow: hidden;
     position: absolute;
-    width: 80vw;
-    height: 70vh;
-    background: transparent;
+    width: 30vw;
+    height: 10vh;
+    /* background: transparent; */
     z-index: 2;
  }
 
@@ -532,13 +532,14 @@ color: #FFFFFF;
 
 .rankInner{
     width: 80%;
-    height: 90%;
+    height: 85%;
     margin: 0% auto;
     margin-top: 0.5%;
     background: #4A565F;
     box-shadow: -1px 5px 12px 9px rgba(0, 0, 0, 0.15);
     border-radius: 47px;
     overflow-y: scroll;
+    padding-top: 4%;
 }
 .rankInner::-webkit-scrollbar {
     display: none;
@@ -586,19 +587,33 @@ color: #FFFFFF;
     background: rgba(56, 61, 82, 0.58);
     border-style: none;
 }
-.rankFilter{
-    position: sticky;
-    z-index: 2;
-    background: #052239;
-    box-shadow: -1px 5px 12px rgba(0, 0, 0, 0.15);
-    border-radius: 42px;
-    margin-bottom: 2%;  
-}
 .rankName, .rankFilters{
+    font-size: 1rem;
     margin-top: 0.5%;
     display: flex;
     flex-direction: row;    
     justify-content:space-around;
+    transition: 0.2s;
+}
+.rankFilter{
+    position: absolute;
+    width: 60%;
+    height: 4.5%;
+    right: 20%;
+    top: 31%;
+    z-index: 3;
+    background: #052239;
+    box-shadow: -1px 5px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 42px;
+    margin-bottom: 2%;  
+    transition: 1s;
+}
+.rankInvis{
+    color: transparent;
+    height: 0%;
+}
+.ranks{
+    margin-top: 10%;
 }
 .rankName{
     margin-left: 2%;
