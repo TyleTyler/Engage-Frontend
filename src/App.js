@@ -8,6 +8,8 @@ import useFetch from './useFetch';
 
 import Loading from './views/components/loading';
 import Ranking from './views/ranking';
+import StudentReportPage from './views/individualStudentRep';
+import PreIndividualStud from './views/preIndiviualStudent';
 
 
 
@@ -30,6 +32,7 @@ function App() {
      <Route path='/Home' element={<HomePage futureData={ futureEvents } top10 ={top10}/>}/>
       <Route path='/UpdateRegister' element={ <UpdateReg />} />  
       <Route path='/Ranking' element= {<Ranking />} />
+      <Route path='/Student/:id' element={ <PreIndividualStud />} /> 
     </Routes>
     </div>}
     </BrowserRouter>

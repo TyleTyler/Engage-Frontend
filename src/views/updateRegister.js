@@ -20,7 +20,6 @@ const UpdateReg = () => {
     const [searchSignal, setSignal] = useState(false);
     const [filter, setFilter] = useState([])
     const [activities, setActivities] = useState(null)
-    const [eventStates, setEvents] = ([])
     
     useEffect(()=>{
         eventUrl = filter.length == 0 ? '/api/MERN/Events/' :`/api/MERN/Events/${searchSignal === true ? "name" : "filter"}/` + `${filter}`
@@ -71,9 +70,10 @@ const UpdateReg = () => {
         let nDate = new Date(date)
         return (nDate).toLocaleDateString()
     }
-    
+
     const handleSubmit = (e) =>{
         e.preventDefault()
+        setPopUp(true)
         let student;
         if(eventsAtt){
             student = {firstName , lastName , idNum, grade, dob, email, eventsAttended : eventsAtt}
@@ -81,12 +81,6 @@ const UpdateReg = () => {
         else{
             student = {firstName , lastName , idNum, grade, dob, email}
         }   
-        setFirstname('')
-        setLastname('')
-        setIdNum('')
-        setGrade('')
-        setDob('')
-        setEmail('')
         if(eventsAtt){
             listReset.current.forEach( e=>{
                 if(e.classList == "activated"){
@@ -94,9 +88,18 @@ const UpdateReg = () => {
                 }
             })
         }
-        setPopUp(true)
+        setTimeout(()=>{
+            setPopUp(false)
+            setFirstname('')
+            setLastname('')
+            setIdNum('')
+            setGrade('')
+            setDob('')
+            setEmail('')}, 800)
+        
+        
         fetch('/api/MERN/Students/', {
-        method : 'POST',
+            method : 'POST',
         headers: { 'Content-Type' : 'application/json'},
         body: JSON.stringify(student)
         }).then((data) =>{
@@ -110,26 +113,32 @@ const UpdateReg = () => {
         <form className="RegisterPage" onSubmit={handleSubmit}>
                 {savedPopUp && 
                 <div className="popUp">
-                    Saved Student
+                   Saved Student {firstName} {lastName}
                 </div>
             }
                 { activities && <h1 className="registerLabel"> Enter New Student Information</h1> } 
                 { activities && <main className="registerField">
                 <section className="inputField">       
-                    <input type="text" id="firstName" className="input" placeholder="First Name" value = {firstName} onChange={(e) =>{
+                    <input required type="text" id="firstName" className="input" placeholder="First Name" value = {firstName} onChange={(e) =>{
                         setFirstname(e.target.value)
                         }}/>           
-                    <input type="text" id="lastName" className="input" placeholder="Last Name" value = {lastName} onChange={(e) =>{
+                    <input required type="text" id="lastName" className="input" placeholder="Last Name" value = {lastName} onChange={(e) =>{
                         setLastname(e.target.value)
                         }}/>       
                     <span className="idNgrade">
-                        <input type="text" id="idNumber" className="input" placeholder="ID Number" value = {idNum} onChange={(e) =>{
+                        <input required type="text" id="idNumber" className="input" placeholder="ID Number" value = {idNum} onChange={(e) =>{
                         if(e.target.value.length >= 8){
+                            return false;
+                        }
+                        else if(e.target.value === ""){
+                            setIdNum("")
+                        }
+                        else if(e.target.value.match(/^[0-9]+$/) === null){
                             return false;
                         }
                         setIdNum(e.target.value)
                         }}/>
-                        <select id="grade" className="input" value = {grade} onChange={(e) =>{
+                        <select required id="grade" className="input" value = {grade} onChange={(e) =>{
                         setGrade(e.target.value)
                         }}>
                             <option value="" disabled selected hidden> Grade </option> 
@@ -142,10 +151,10 @@ const UpdateReg = () => {
                             <option value="12th"> 12th </option>  
                         </select>
                     </span>
-                    <input type="date" id="dateOfBirth" className="input" placeholder="Date of Birth" value = {dob} onChange={(e) =>{
+                    <input required type="date" id="dateOfBirth" className="input" placeholder="Date of Birth" value = {dob} onChange={(e) =>{
                         setDob(e.target.value)
                         }}/>
-                    <input type="text" id="email" className="input" placeholder="E-mail" value = {email} onChange={(e) =>{
+                    <input required type="text" id="email" className="input" placeholder="E-mail" value = {email} onChange={(e) =>{
                         
                         setEmail(e.target.value)
                         }}/>

@@ -4,6 +4,13 @@ textarea:focus,
 button:focus {
     outline: none;
 }
+a{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}
+
 .up-arrow {
     width: 0;
     height: 0;
@@ -512,13 +519,38 @@ color: #FFFFFF;
  }
 
  .popUp{
-    background-color: white;
+    width: fit-content;
+    padding: 0% 3%;
+    height: 10vh;
+    background: #49535B;
+    border-radius: 41px;
     overflow: hidden;
     position: absolute;
-    width: 30vw;
-    height: 10vh;
-    /* background: transparent; */
+    right: 40%;
     z-index: 2;
+    animation: popUpFadeAway 1.3s infinite ease-in-out;
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 80px;
+    color: #F3764A;
+
+ }
+
+ @keyframes popUpFadeAway {
+    0%{
+        opacity: 100%;
+    }
+    30%{
+        opacity: 100%;
+    }
+    80%{
+        opacity: 30%;
+    }
+    100%{
+        opacity: 0%;
+    }
  }
 
  .rankSection{
@@ -643,4 +675,114 @@ color: #FFFFFF;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+}
+
+
+
+
+.individualStud{
+    width: 80vw;
+    height: 70vh;
+    margin:0 auto;
+    background: #2D353B;
+    box-shadow: -1px 5px 20px 9px rgba(0, 0, 0, 0.15);
+    border-radius: 32px;
+}
+
+.studInfo{
+    align-items: center;
+    height: 100%;
+    display: flex;
+    column-gap: 5%;
+}
+.basicInfo{
+    margin-left: 2%;
+    width: 40%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 9%;
+}
+.studInfo .input{
+    background: #181D22;
+}
+
+
+.idNgrade{
+    display: flex;
+    column-gap: 5%;
+}
+.idNgrade .input{
+    height: 100%;
+}
+.idNgrade .input:nth-child(1){
+    width: 55%;
+}
+
+.idNgrade .input:nth-child(2){
+    width: 30%;
+}
+
+.studStats{
+    height: 80%;
+    width: 80%;
+    /* background-color: blue; */
+
+}
+
+.generalStats{
+    width: 40%;
+    height: 10hv;
+    background: #49535A;
+    border-radius: 42px;
+}
+
+.generalFlex{
+    /* background-color: orange; */
+    display: flex;
+    justify-content: space-evenly;
+}
+.statrow{
+    /* background-color: yellowgreen; */
+    width: 100%;
+    height: fit-content;
+    display: flex;
+}
+.stat{  
+    /* background-color: #1A8EF1; */
+    width: 25%;
+    height: 7vh;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20%;
+    margin: 4% auto;
+}
+
+.statLabel{
+    display: inline-block;
+    white-space: nowrap;
+    align-self: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.unStatLine{
+    width: 40%;
+}
+.unStatLines{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.indiEvents{
+    align-self: center;
+    width: 80%;
+    height: 70%;
+    margin:1% auto;
 }

@@ -56,7 +56,7 @@ const Ranking = () => {
         }}className="rankInner"> 
 
             {students.map((e, idx)=>(
-                 <StudentRanking rank={idx} name = {`${e.firstName} ${e.lastName}`} qPoints = {e.points} tPoints = {e.sumPoints} grade= {e.grade} />   
+                 <StudentRanking rank={idx} idNum = {e.idNum} name = {`${e.firstName} ${e.lastName}`} qPoints = {e.points} tPoints = {e.sumPoints} grade= {e.grade} />   
                  ))}
         </div> }
     </section> );

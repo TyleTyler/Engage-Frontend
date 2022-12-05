@@ -1,7 +1,7 @@
-
-const StudentRanking = ({rank, name, qPoints, tPoints, grade}) => {
+import { Link } from "react-router-dom";
+const StudentRanking = ({rank, name, qPoints, tPoints, grade, idNum}) => {
     return (
-        <div>
+        <Link to={`/student/${idNum}`}>
             <div className="studRank">
               <span className="rankName"> 
                     <div> {rank + 1}</div>
@@ -14,7 +14,7 @@ const StudentRanking = ({rank, name, qPoints, tPoints, grade}) => {
                 </span>
             </div>
             <hr className="rankLine"/>
-        </div>
+        </Link>
     );
 }
  
