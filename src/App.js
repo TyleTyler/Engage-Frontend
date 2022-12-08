@@ -3,13 +3,14 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import Navigation from './views/components/Navigation'
 import HomePage from './views/HomePage';
 import './cssRes/app.css'
-import UpdateReg from './views/updateRegister';
+import UpdateReg from './views/register';
 import useFetch from './useFetch';
 
 import Loading from './views/components/loading';
 import Ranking from './views/ranking';
 import StudentReportPage from './views/individualStudentRep';
 import PreIndividualStud from './views/preIndiviualStudent';
+import StudentSearchResult from './views/studentSearch';
 
 
 
@@ -33,6 +34,7 @@ function App() {
       <Route path='/UpdateRegister' element={ <UpdateReg />} />  
       <Route path='/Ranking' element= {<Ranking />} />
       <Route path='/Student/:id' element={ <PreIndividualStud />} /> 
+      <Route path='/Search' element= { <StudentSearchResult />} />
     </Routes>
     </div>}
     </BrowserRouter>

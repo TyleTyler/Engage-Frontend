@@ -10,7 +10,7 @@ const UpdateReg = () => {
     const [firstName, setFirstname] = useState('')
     const [lastName, setLastname] = useState('')
     const [idNum, setIdNum] = useState('')
-    const [grade, setGrade] = useState('')
+    const [grade, setGrade] = useState(0)
     const [dob, setDob] = useState('')
     const [email, setEmail] = useState('')
     const [eventsAtt, setEventsAttended] = useState([])
@@ -19,17 +19,27 @@ const UpdateReg = () => {
     let eventUrl;
     const [searchSignal, setSignal] = useState(false);
     const [filter, setFilter] = useState([])
+    const [searchTerm, setSearchTerm] = useState("")
     const [activities, setActivities] = useState(null)
     
     useEffect(()=>{
-        eventUrl = filter.length == 0 ? '/api/MERN/Events/' :`/api/MERN/Events/${searchSignal === true ? "name" : "filter"}/` + `${filter}`
+         if(filter.length != 0 && searchTerm.length != 0){
+           eventUrl = `/api/MERN/Events/filter/${filter},${searchTerm}`
+         }else if(filter.length != 0){
+            eventUrl = `/api/MERN/Events/filter/${filter}`;
+         }else if(searchTerm){
+            eventUrl = `/api/MERN/Events/name/${searchTerm}`
+         }else{
+            eventUrl = `/api/MERN/Events`
+         } 
+         console.log(eventUrl)
         fetch(eventUrl)
         .then(res =>{ return res.json()})
         .then(data => {
             setActivities(data)
         })
         
-    }, [filter])
+    }, [filter, searchTerm])
 
     useEffect(()=>{
         listReset.current.forEach(act =>{
@@ -93,7 +103,7 @@ const UpdateReg = () => {
             setFirstname('')
             setLastname('')
             setIdNum('')
-            setGrade('')
+            setGrade(0)
             setDob('')
             setEmail('')}, 800)
         
@@ -142,13 +152,13 @@ const UpdateReg = () => {
                         setGrade(e.target.value)
                         }}>
                             <option value="" disabled selected hidden> Grade </option> 
-                            <option value="6th"> 6th </option>    
-                            <option value="7th"> 7th </option>  
-                            <option value="8th"> 8th </option>  
-                            <option value="9th"> 9th </option>  
-                            <option value="10th"> 10th </option>  
-                            <option value="11th"> 11th </option>  
-                            <option value="12th"> 12th </option>  
+                            <option value={6}> 6th </option>    
+                            <option value={7}> 7th </option>  
+                            <option value={8}> 8th </option>  
+                            <option value={9}> 9th </option>  
+                            <option value={10}> 10th </option>  
+                            <option value={11}> 11th </option>  
+                            <option value={12}> 12th </option>  
                         </select>
                     </span>
                     <input required type="date" id="dateOfBirth" className="input" placeholder="Date of Birth" value = {dob} onChange={(e) =>{
@@ -162,11 +172,9 @@ const UpdateReg = () => {
                 <section className="eventsAttend">
                     <input type="text" id="eventSearch" placeholder="Search" onChange={ (e)=>{
                         if(e.target.value.length == 0){
-                            setSignal(false);
-                            setFilter([])
+                            setSearchTerm("")
                         }else{
-                            setSignal(true);
-                            setFilter(e.target.value)
+                            setSearchTerm(e.target.value)
                         }
 
 
@@ -196,7 +204,7 @@ const UpdateReg = () => {
                                             e.target.dataset["state"] = "ascending"
                                             break;
                                         case "ascending":
-                                            setFilter("eventDate", "asc")
+                                            setFilter(["eventDate", "asc"])
                                             e.target.dataset["state"] = "descending"
                                             break;
                                         default:
@@ -211,7 +219,8 @@ const UpdateReg = () => {
                                             e.target.dataset["state"] = "ascending"
                                             break;
                                         case "ascending":
-                                            setFilter("pointWorth", "asc")
+                                            console.log("Ascend")
+                                            setFilter(["pointWorth", "asc"])
                                             e.target.dataset["state"] = "descending"
                                             break;
                                         default:

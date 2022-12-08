@@ -165,7 +165,9 @@ ul{
     -moz-box-shadow: -7px 8px 35px -12px rgba(0,0,0,0.99) ;
 }
 .homeTop{
-    width: 31%;
+    min-width: 31%;
+    white-space: nowrap;
+    max-width: 40%;
 }
 .homeFut{
     width: 27%;
@@ -785,4 +787,8 @@ color: #FFFFFF;
     width: 80%;
     height: 70%;
     margin:1% auto;
+}
+
+.searchBox{
+    
 }

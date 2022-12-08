@@ -8,7 +8,7 @@ const StudentRanking = ({rank, name, qPoints, tPoints, grade, idNum}) => {
                     <div  className="rName"> {name} </div>
                 </span>
                 <span className="rankFilters"> 
-                    <div className="rGrade"> {grade}</div>
+                    <div className="rGrade"> {grade}th</div>
                     <div>{qPoints}</div>
                     <div>{tPoints}</div>
                 </span>
