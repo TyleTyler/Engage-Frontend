@@ -19,7 +19,7 @@ const Ranking = () => {
             studUrl = `/api/MERN/Students/filter/${filter},${searchTerm}`
           }else if(filter.length != 0){
              studUrl = `/api/MERN/Students/filter/${filter}`;
-          }else if(searchTerm){
+          }else if(searchTerm.length != 0){
              studUrl = `/api/MERN/Students/filter/points.-1,${searchTerm}`
           }else{
              studUrl = `/api/MERN/Students/filter/points.-1` 
@@ -121,7 +121,13 @@ const Ranking = () => {
             }}>Total Points</div>
         </span>
      </nav>     
-     <input className="rankSearch" placeholder="Search by" />
+     <input className="rankSearch" placeholder="Search by" onChange={(e)=>{
+        if(e.target.value === ""){
+            setSearchTerm("")
+        }else{
+            setSearchTerm(e.target.value)
+        }
+     }}/>
         { students && <div onScroll={(e)=>{
             handleY(e.target.scrollTop)
             if(prevY > e.target.scrollTop){

@@ -497,13 +497,11 @@ color: #FFFFFF;
     color : #24FF00;
  }
  
- .registerBut{
+ .actionButton{
     align-self: center;
     border-style: none;
     width: 20%;
     height: 51px;
-    left: 532px;
-    top: 836px;
     background: #1D2226;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
     border-radius: 42px;
@@ -790,5 +788,30 @@ color: #FFFFFF;
 }
 
 .searchBox{
-    
+    margin: 0% auto;
+    width: 65%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10%;
+    background: #2D353B;
+    box-shadow: -1px 5px 20px 9px rgba(0, 0, 0, 0.15);
+    border-radius: 32px;
+}
+.searchBox .registerLabel{
+    position: relative;
+    right: 0;
+}
+.searchBox .input{
+    width: 40%;
+    height: 10%;
+}
+
+.searchBox .actionButton{
+    height: 5%;
+    width: 15%;
+    line-height: 10px;
+    font-size: 1.4rem;
+
 }

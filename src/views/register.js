@@ -256,7 +256,7 @@ const UpdateReg = () => {
                     </div>
                 </section>
             </main> }
-            { activities && <button className="registerBut"> Register </button>}
+            { activities && <button className="actionButton"> Register </button>}
         </form> );
     }
         
