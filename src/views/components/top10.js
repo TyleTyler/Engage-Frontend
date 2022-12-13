@@ -3,7 +3,7 @@ import  { Link } from 'react-router-dom';
 
 const TopTen = ({top10}) => {
     return (
-     <div className="homebox homeTop">
+     <div className="homebox">
         <div className="homeLabel"> Top 10 Students </div>
         <ol>
         { top10.map(student => (

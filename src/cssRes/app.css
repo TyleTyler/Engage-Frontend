@@ -1,14 +1,23 @@
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-    outline: none;
+@layer utils {
+    input:focus,
+    select:focus,
+    textarea:focus,
+    button:focus {
+        outline: none;
+    }
+    a{
+        text-decoration: none;
+    }
+    a:visited{
+        text-decoration: none;
+    }
 }
-a{
-    text-decoration: none;
-}
-a:visited{
-    text-decoration: none;
+
+
+.pageWrap{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
 }
 
 .up-arrow {
@@ -33,6 +42,11 @@ a:visited{
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;800&display=swap');
+
+@font-face{
+    font-family: "Montserrat";
+    src: url("Montserrat-VariableFont_wght.ttf")
+}
 
 @font-face {
     font-family: "Heebo";
@@ -88,17 +102,91 @@ a:visited{
 
 
 
-.main{
-    width: 90vw;
+.main{ 
+    background-color: yellowgreen;
+    width: 60vw;
+    margin-bottom: 50%;
+    /* margin: auto auto; */
     height: 75vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    /* background-color: rgb(255, 0, 170); */
+}
 
+.navBar{
+    width: 12vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: baseline;
+    background: #1B1537;
+}
+
+.nav{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: 7%;
+}
+
+
+.navEl{
+    z-index: 1;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: flex-start;
+    width: 80%;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 38px;
+    letter-spacing: -0.09em;  
+    transition: 0.5s;  
+    padding:2% 10%;
+}
+.navEl::before{
+    content: '';
+    width: 20%;
+    height: inherit;
+}
+.homeEl::before{
+    content: '';
+    background-image: url('home.png');
+    background-repeat: no-repeat;
+}
+.registerEl::before{
+    content: '';
+    background-image: url('register.png');
+    background-repeat: no-repeat;
+}
+.rankingEl::before{
+    content: '';
+    background-image: url('ranking.png');
+    background-repeat: no-repeat;
+}
+.aboutEl::before{
+    content: '';
+    background-image: url('info.png');
+    background-repeat: no-repeat;
+}
+.nav a{
+    transition-timing-function: cubic-bezier(.96,.98,.23,1);
+}
+.navEl:hover{
+    background-color: #120E25;
+}
+
+
+.nav a:hover::before{
+    z-index: 0;
 }
 .logo{
-    margin-left: 3%;    
+    margin-right:2%;
+    margin-top: 30%;
+    margin-bottom: 50%;    
 }
 .homeRank{
     margin-left: 4%;
@@ -128,11 +216,11 @@ ul{
     margin-top: 5%;
     font-family: 'Baloo 2';
     font-weight: 800;
-    font-size: 2rem;
+    font-size: 1.7rem;
     line-height: 46px;
     text-align: center;
     color: #1A8EF1;
-    width: 339px;
+    width: 80%;
     height: fit-content;
     background: #1d2226;
     border-radius: 42px;
@@ -141,11 +229,14 @@ ul{
 .homebox{
     display: flex;
     flex-direction: column;
-    background: #2D353B;
+    background: #2B4363;
+    width: 322px;
+    height: 768px;
     border-radius: 32px;
     box-shadow: -1px 5px 12px 9px rgba(0, 0, 0, 0.15);
     height: 100%;
     transition: 1s;
+    padding: 0 0.5%;
 }
 .homebox li, .eventL{
     font-weight:lighter;
@@ -153,8 +244,9 @@ ul{
 }
 
 .homebox a{
+    white-space:;
     color: white;
-    text-decoration: none;
+    font-size: 1.1rem;
 }
 
 .hover:hover, .homebox li::marker{
@@ -164,14 +256,8 @@ ul{
     -webkit-box-shadow: -7px 8px 35px -12px rgba(0,0,0,0.99) ;
     -moz-box-shadow: -7px 8px 35px -12px rgba(0,0,0,0.99) ;
 }
-.homeTop{
-    min-width: 31%;
-    white-space: nowrap;
-    max-width: 40%;
-}
-.homeFut{
-    width: 27%;
-}
+
+
 .centerBody{
     display: flex;
     flex-direction: row;
@@ -184,81 +270,6 @@ ul{
 
 
 
-.navBar{
-    margin-top: 2%;
-    height: 18vh;
-    width: 90vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: baseline;
-    column-gap: 30%;
-    /* background: blue; */
-}
-
-.nav a{
-    text-decoration: none;
-}
-.nav{
-    position: relative;
-    margin-top: 2%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 3%;
-    color:white;
-    width: fit-content;
-    align-self: flex-end;
-    gap: 15px;
-    background: #49535B;
-    border: 1px solid #1B1F24;
-    padding: 8px 0px;
-    z-index: 4;
-
-}
-.nav::before {
-    content: "";
-    position: absolute;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-right: 1px solid #1B1F24;
-    border-top: 1px solid #1B1F24;
-    border-bottom: 1px solid #1B1F24;
-    width: 7%;
-    height: 100%;
-    right: -7%;
-    background: #49535B;
-    z-index: 2;
-}
-.nav::after {
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-left: 1px solid #1B1F24;
-    border-top: 1px solid #1B1F24;
-    border-bottom: 1px solid #1B1F24;
-    content: "";
-    position: absolute;
-    width: 7%;
-    height: 100%;
-    left: -7%;
-    background: #49535B;
-    z-index: 2;
-}
-.nav a{
-    transition-timing-function: cubic-bezier(.96,.98,.23,1);
-}
-.nav a:hover{
-    color: #FDBC22;
-}
-.navEl{
-font-family: 'Baloo 2';
-font-style: normal;
-font-weight: 500;
-font-size: 1.2rem;
-line-height: 32px;
-text-align: center;
-color: #FFFFFF;
-}
 
 .prizeStack{
     margin-top: -2%;

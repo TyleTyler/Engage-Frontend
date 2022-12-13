@@ -27,16 +27,18 @@ function App() {
   return (
     <BrowserRouter>
   { ePend && sPend && <Loading /> }
-    {futureEvents && top10 && <div>
-   <Navigation /> 
-    <Routes>
-     <Route path='/Home' element={<HomePage futureData={ futureEvents } top10 ={top10}/>}/>
-      <Route path='/UpdateRegister' element={ <UpdateReg />} />  
-      <Route path='/Ranking' element= {<Ranking />} />
-      <Route path='/Student/:id' element={ <PreIndividualStud />} /> 
-      <Route path='/Search' element= { <StudentSearchResult />} />
-    </Routes>
-    </div>}
+    {futureEvents && top10 && 
+    <div class="pageWrap">
+    <Navigation /> 
+      <Routes>
+      <Route path='/Home' element={<HomePage futureData={ futureEvents } top10 ={top10}/>}/>
+        <Route path='/Register' element={ <UpdateReg />} />  
+        <Route path='/Ranking' element= {<Ranking />} />
+        <Route path='/Student/:id' element={ <PreIndividualStud />} /> 
+        <Route path='/Search' element= { <StudentSearchResult />} />
+      </Routes>
+    </div>
+    }
     </BrowserRouter>
   );
 }

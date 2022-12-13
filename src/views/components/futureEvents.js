@@ -11,7 +11,7 @@ const FutureEvents = ({futureData}) => {
     const {futureEvents } = futureData //Throws error reading "null"  
 
     return ( 
-    <div className="homebox homeFut">
+    <div className="homebox">
         <div className="homeLabel">Up Coming Events</div>
         <ul className="futEvents">
         {futureData && futureData.futureEvents.map(events =>(

@@ -9,6 +9,7 @@ const PreIndividualStud = () => {
     const {id} = useParams()
 
     const { data } = useFetch(`/api/MERN/Students/${id}`)
+   console.log(data)
     return (
          <div> 
             { data && <PreStudentEvents student={data}/> }  
