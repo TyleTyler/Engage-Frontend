@@ -15,7 +15,10 @@ const FutureEvents = ({futureData}) => {
         <div className="homeLabel">Up Coming Events</div>
         <ul className="futEvents">
         {futureData && futureData.futureEvents.map(events =>(
-         <div className="hover"> <li key ={events.eventName} className="homeRank upComing"> <a href = {`http://localhost:4000/api/MERN/Events/${events._id}`}> <span className="eventL">{ `${events.eventName}`} </span> <span className="eventL eventDate"> {`${toDate(events.eventDate)}`}</span> </a></li></div> 
+         <div className="hover"> 
+            <li key ={events.eventName} className="homeRank upComing"> <span className="eventL">{ `${events.eventName}`} </span> </li>
+            <span className="eventL eventDate"> {`${toDate(events.eventDate)}`}</span>
+         </div> 
         ))}
         </ul>
     </div> );

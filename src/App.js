@@ -11,6 +11,7 @@ import Ranking from './views/ranking';
 import StudentReportPage from './views/individualStudentRep';
 import PreIndividualStud from './views/preIndiviualStudent';
 import StudentSearchResult from './views/studentSearch';
+import AboutUsPage from './views/aboutus';
 
 
 
@@ -36,6 +37,7 @@ function App() {
         <Route path='/Ranking' element= {<Ranking />} />
         <Route path='/Student/:id' element={ <PreIndividualStud />} /> 
         <Route path='/Search' element= { <StudentSearchResult />} />
+        <Route path='/About-us' element={<AboutUsPage />}/>
       </Routes>
     </div>
     }

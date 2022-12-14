@@ -42,9 +42,10 @@ const Ranking = () => {
                     })
                 })
             }
+            console.log(data)
             setStudents(data)
         })   
-        console.log(rankState)
+        // console.log(rankState)
     }, [filter, searchTerm])
 
 
@@ -92,25 +93,28 @@ const Ranking = () => {
             <div> Grade</div>
             <div data-state="descending" onClick={(e)=>{
                     switch(e.target.dataset["state"]) {
-                        case "ascending" :
-                         setFilter(["points.desc"])
+                        case "none" :
+                            e.target.dataset["state"] = "ascending"
+                            setFilter(["points.1"])
+                        break;
+                        case "ascending" : 
                          e.target.dataset["state"] = "descending"
+                           setFilter(["points.-1"])
                         break;
                         default :
-                         e.target.dataset["state"] = "ascending"
-                         setFilter(["points.asc"])
-                        break;
+                         e.target.dataset["state"] = "none"
+                         setFilter("")
                     }
             }}>Points for Quarter</div>
             <div data-state="none" onClick={(e)=>{
                     switch(e.target.dataset["state"]) {
                         case "none" :
-                         setFilter(["sumPoints","1"])
-                         e.target.dataset["state"] = "ascending"
+                            e.target.dataset["state"] = "ascending"
+                            setFilter(["sumPoints.1"])
                         break;
                         case "ascending" : 
                          e.target.dataset["state"] = "descending"
-                         setFilter(["sumPoints","-1"])
+                           setFilter(["sumPoints.-1"])
                         break;
                         default :
                          e.target.dataset["state"] = "none"
@@ -121,12 +125,12 @@ const Ranking = () => {
             }}>Total Points</div>
         </span>
      </nav>     
-     <input className="rankSearch" placeholder="Search by" onChange={(e)=>{
+     <input className="rankSearch" placeholder="Search Student" onChange={(e)=>{
         if(e.target.value === ""){
             setSearchTerm("")
         }else{
             setSearchTerm(e.target.value)
-        }
+        }          
      }}/>
         { students && <div onScroll={(e)=>{
             handleY(e.target.scrollTop)
