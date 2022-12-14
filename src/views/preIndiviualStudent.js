@@ -6,15 +6,17 @@ import PreStudentEvents from "./preStudentEvents";
 
 
 const PreIndividualStud = () => {
-    const {id} = useParams()
-
-    const { data } = useFetch(`/api/MERN/Students/${id}`)
-   console.log(data)
+    const {id} = useParams()  
+    const {data} = useFetch(`/api/MERN/Students/${id}`)
+    let run = 0;
+    run++;
+    console.log(data)
+    console.log(run)   
     return (
-         <div> 
-            { data && <PreStudentEvents student={data}/> }  
-         </div>
-       );
+      <div> 
+        {data != null &&  <PreStudentEvents student={data}/> }  
+      </div>
+    );
 }
- 
+
 export default PreIndividualStud;

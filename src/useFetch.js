@@ -13,7 +13,6 @@ let useFetch = (url) =>{
 
     useEffect(()=>{
         fetch(url).then(res =>{
-            console.log(res)
             if(!res.ok){
                 throw Error('Could not get data')
             }

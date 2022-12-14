@@ -16,6 +16,22 @@
 ::-webkit-scrollbar {
     display: none;
 }
+
+body {
+    display: flex;
+    margin: 0;
+    flex-direction: row;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #100B2D;
+    height: 100vh;
+    width: 100vw;
+  }
+  
 .pageWrap{
     display: flex;
     flex-direction: row;
@@ -121,7 +137,7 @@
 }
 
 .navBar{
-    width: 12vw;
+    width: 15%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -325,13 +341,13 @@ ul{
 }
 
 .RegisterPage{
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 75vw;
     height: 70vh;
-    left: 15%;
-    top: 25%;
+    margin: 0 auto;
+    margin-top: 4%;
     background: #263A55;
     box-shadow: -1px 5px 20px 9px rgba(0, 0, 0, 0.15);
     border-radius: 32px;
@@ -368,6 +384,7 @@ ul{
     display: flex;
     flex-direction: row;
     column-gap: 10%;
+
 }
 .inputField{
     display: flex;
@@ -386,7 +403,7 @@ ul{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 40px;
     display: flex;
     align-items: center;
@@ -696,8 +713,8 @@ ul{
     position: absolute;
     width: 60%;
     height: 4.5%;
-    right: 15%;
-    top: 20%;
+    margin: 0 10%;
+    margin-top: 9%;
     z-index: 3;
     background: #052239;
     box-shadow: -1px 5px 12px rgba(0, 0, 0, 0.15);
@@ -885,7 +902,9 @@ ul{
 .aboutUsSection{
     position: relative;
     margin: auto auto;
-    width: 60%;
+    min-width: 60%;
+    max-width: 70%;
+    padding-left: 3%;
     height: 80vh;
     background: #263A55;
     border-radius: 32px;
@@ -907,7 +926,8 @@ ul{
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    width: 40%;
+    min-width: 40%;
+    max-width: 50%;
     height: 303px;
     background: #1A253A;
     border-radius: 47px;
@@ -925,8 +945,7 @@ ul{
 
 .aboutName{
     position: absolute;
-    top: -2%;
-    left: 26.4%;
+    margin: 2% 25% 0% 0%;
     font-family: 'Baloo 2';
     font-style: normal;
     font-weight: 500;
@@ -939,16 +958,81 @@ ul{
 
 .aboutPfp{
     position: absolute;
-    width: 13vw;
+    min-width: 13vw;
+    max-width: 15vw;
     height: 38%;
     left: 2%;
     top: 16%;
     background: url(pfp.png);
+    background-size:cover;
+    background-repeat: no-repeat;
     border-radius: 92px;
 }
 
 .socials{
+    position: absolute;
     height: 30vh;
     width: 10vw;
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
+    display: flex;
+    flex-direction: column;
+    row-gap: 5%;
+    margin-top: 33%;
+    margin-right: 73%;
 }
+
+
+.social{
+    z-index: 3;
+    width: 48px;
+    height: 48px;
+    background: #B1C5D2;
+    border-radius: 92px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.discordHover{
+    position: relative;
+    left: 100%;
+    z-index: 4;
+    min-width: fit-content;
+    max-width: 14vw;
+    padding:0 20%;
+    height: 5vh;
+    border-radius: 15%;
+    background-color: white;
+    opacity: 0.8;
+}
+
+.twitter{
+    background-image: url("twitter.png");
+   
+}
+.github{
+    background-image: url("github.png");
+}
+
+.email{
+    background-image: url("email.png");
+}
+
+.discord{
+    background-image: url("discord.png");
+}
+
+.connect{
+    position: absolute;
+    margin-top: 50%;
+    margin-left: 40%;
+    width: 100%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 1rem;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #8ABDC4;
+}
+

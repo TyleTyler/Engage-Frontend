@@ -29,14 +29,14 @@ function App() {
     <BrowserRouter>
   { ePend && sPend && <Loading /> }
     {futureEvents && top10 && 
-    <div class="pageWrap">
+    <div className="pageWrap">
     <Navigation /> 
       <Routes>
       <Route path='/Home' element={<HomePage futureData={ futureEvents } top10 ={top10}/>}/>
         <Route path='/Register' element={ <UpdateReg />} />  
         <Route path='/Ranking' element= {<Ranking />} />
         <Route path='/Student/:id' element={ <PreIndividualStud />} /> 
-        <Route path='/Search' element= { <StudentSearchResult />} />
+       <Route path='/Search' element= { <StudentSearchResult />} />
         <Route path='/About-us' element={<AboutUsPage />}/>
       </Routes>
     </div>

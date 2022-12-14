@@ -245,7 +245,7 @@ const UpdateReg = () => {
                                     }
                                     }}> 
                                 <span className="actLi"> 
-                                    <div className={`act ${activities.eventName.length >= 31 ? "long" : ""}`} onMouseEnter={(e)=>{
+                                    <div className={`act ${activities.eventName.length >= 28 ? "long" : ""}`} onMouseEnter={(e)=>{
                                         e.target.classList.toggle("expandEv")
                                     }} onMouseLeave={(e)=>{e.target.classList.toggle("expandEv")}}> {activities.eventName} </div> 
                                     <div className="act"> {toDate(activities.eventDate)} </div>
