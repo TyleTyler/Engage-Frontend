@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../useFetch";
 
@@ -7,14 +8,16 @@ import PreStudentEvents from "./preStudentEvents";
 
 const PreIndividualStud = () => {
     const {id} = useParams()  
-    const {data} = useFetch(`/api/MERN/Students/${id}`)
-    let run = 0;
-    run++;
-    console.log(data)
-    console.log(run)   
+    const [data, setData] = useState(null)
+    useEffect(()=>{
+      fetch((`/api/MERN/Students/${id}`)).then(e=>{return e.json()})
+      .then(data =>{ 
+         console.log(data)
+         setData(data)})
+    },[]) 
     return (
       <div> 
-        {data != null &&  <PreStudentEvents student={data}/> }  
+        {data &&  <PreStudentEvents student={data}/> }  
       </div>
     );
 }

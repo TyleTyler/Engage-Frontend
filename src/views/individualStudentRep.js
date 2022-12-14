@@ -14,23 +14,20 @@ const StudentReportPage = ({student, activities}) => {
         return (nDate).toLocaleDateString()
     }
 
-    console.log(activities)
-
-
 return ( 
 <div className="individualStud">
     
        {student &&
        <div className="studInfo">
             <div className="basicInfo">
-                <input type="text" readOnly className="input" placeholder="First Name" value={student[0].firstName} />
-                <input type="text" readOnly className="input" placeholder="Last Name" value={student[0].lastName} />
+                <input type="text" readOnly className="input" placeholder="First Name" value={student.firstName} />
+                <input type="text" readOnly className="input" placeholder="Last Name" value={student.lastName} />
                 <span className="idNgrade"> 
-                    <input type="text" readOnly className="input" placeholder="ID Number" value={`0${student[0].idNum}`} />
-                    <input type="text" readOnly className="input" placeholder="Grade" value={student[0].grade} />
+                    <input type="text" readOnly className="input" placeholder="ID Number" value={`0${student.idNum}`} />
+                    <input type="text" readOnly className="input" placeholder="Grade" value={student.grade} />
                 </span>
-                <input type="text" readOnly className="input" placeholder="Date of Birth" value={toDate(student[0].dob)} />
-                <input type="text" readOnly className="input" placeholder="E-mail" value={student[0].email} />
+                <input type="text" readOnly className="input" placeholder="Date of Birth" value={toDate(student .dob)} />
+                <input type="text" readOnly className="input" placeholder="E-mail" value={student.email} />
             </div>
             <div className="studStats">
                 <span className="generalFlex"> 
