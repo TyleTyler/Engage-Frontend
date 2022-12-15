@@ -12,7 +12,7 @@ let useFetch = (url) =>{
 
 
     useEffect(()=>{
-        fetch(url).then(res =>{
+        fetch("https://fblaproj-api.onrender.com" + url ).then(res =>{
             if(!res.ok){
                 throw Error('Could not get data')
             }
