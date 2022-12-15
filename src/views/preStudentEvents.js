@@ -10,7 +10,7 @@ const PreStudentEvents = ({student}) => {
             console.log(data)}
             )
     }, [])
-    console.log(student)
+    // console.log(student.eventsAttended.join("."))
     return ( <div>
          { data && <StudentReportPage student={student} activities={data}/> }  
         </div>

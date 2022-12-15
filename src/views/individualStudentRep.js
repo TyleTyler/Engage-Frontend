@@ -24,7 +24,7 @@ return (
                 <input type="text" readOnly className="input" placeholder="Last Name" value={student.lastName} />
                 <span className="idNgrade"> 
                     <input type="text" readOnly className="input" placeholder="ID Number" value={`0${student.idNum}`} />
-                    <input type="text" readOnly className="input" placeholder="Grade" value={student.grade} />
+                    <input type="text" readOnly className="input" placeholder="Grade" value={`${student.grade}th`} />
                 </span>
                 <input type="text" readOnly className="input" placeholder="Date of Birth" value={toDate(student .dob)} />
                 <input type="text" readOnly className="input" placeholder="E-mail" value={student.email} />
@@ -55,9 +55,6 @@ return (
                                 <div className="statLabel"> WIP </div>
                             </span>
                         </div>
-                    </section>
-                    <section className="generalStats">
-
                     </section>
                 </span>
                 { activities && <div className="events indiEvents">
@@ -117,7 +114,9 @@ return (
                             {activities.map( (activities, idx) =>(
                                 <li key = {idx} ref={(el) => (listReset.current[idx] = el)} data-key={activities._id} data-name = {activities.eventName} >
                                 <span className="actLi"> 
-                                    <div className="act"> {activities.eventName} </div> 
+                                    <div className={`act ${activities.eventName.length >= 28 ? "long" : ""}`} onMouseEnter={(e)=>{
+                                        e.target.classList.toggle("expandEv")
+                                    }} onMouseLeave={(e)=>{e.target.classList.toggle("expandEv")}}> {activities.eventName} </div> 
                                     <div className="act"> {toDate(activities.eventDate)} </div>
                                     <div className="act ">{ activities.pointWorth} Points</div> 
                                     <div className="act sport"> {activities.eventType}</div> 

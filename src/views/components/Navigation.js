@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom';
+
 import logo from './logo.png'
+
 const Nav = () => {
+    
+
     return (
         <div className="navBar">
             <img src={ logo } alt="Logo.png" className="logo" />
@@ -13,6 +17,7 @@ const Nav = () => {
                 {/* <Link to= "/Events" className="navEl"> Events </Link> |  */}
                 <Link to= "/About-us" className="navEl aboutEl"> About Us</Link>  
             </nav>
+           
         </div>
       );
 }
