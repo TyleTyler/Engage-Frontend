@@ -998,7 +998,7 @@ ul{
     font-style: normal;
     font-weight: 500;
     font-size: 4rem;
-    line-height: 138px; 
+    /* line-height: 138px;  */
     text-align: center;
     color: #7A6C05;
     /* z-index: 2; */
@@ -1927,7 +1927,7 @@ ul{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
     padding: 2% 3%;
     line-height: 139.52%;
     border: 2px solid;
@@ -1946,7 +1946,7 @@ ul{
     font-style: normal;
     font-weight: 500;
     font-size: 4rem;
-    line-height: 138px; 
+    /* line-height: 138px;  */
     text-align: center;
     color: #5F9FB4;
     /* z-index: 2; */
