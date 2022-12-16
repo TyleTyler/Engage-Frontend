@@ -10,7 +10,7 @@ const PreIndividualStud = () => {
     const {id} = useParams()  
     const [data, setData] = useState(null)
     useEffect(()=>{
-      fetch((`/api/MERN/Students/${id}`)).then(e=>{return e.json()})
+      fetch((`https://long-nation-371823.uc.r.appspot.com//api/MERN/Students/${id}`)).then(e=>{return e.json()})
       .then(data =>{ 
          console.log(data)
          setData(data)})

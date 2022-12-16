@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const PreStudentEvents = ({student}) => {
     const [data, setData ] = useState(null)
     useEffect(()=>{
-        fetch(`/api/MERN/Events/List/${student.eventsAttended.join(".")}`).then(e=>{return e.json()})
+        fetch(`https://long-nation-371823.uc.r.appspot.com//api/MERN/Events/List/${student.eventsAttended.join(".")}`).then(e=>{return e.json()})
         .then(data => {
             setData(data)
             console.log(data)}

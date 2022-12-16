@@ -12,7 +12,7 @@ let useFetch = (url) =>{
 
 
     useEffect(()=>{
-        fetch("https://fblaproj-api.onrender.com" + url ).then(res =>{
+        fetch("https://long-nation-371823.uc.r.appspot.com/" + url ).then(res =>{
             if(!res.ok){
                 throw Error('Could not get data')
             }
