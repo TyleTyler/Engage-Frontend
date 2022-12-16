@@ -978,7 +978,7 @@ ul{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
     padding: 2% 3%;
     line-height: 139.52%;
     border: 2px solid;
