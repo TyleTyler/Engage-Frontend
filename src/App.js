@@ -54,7 +54,7 @@ function App() {
         <Route path='/Student/:id' element={ <PreIndividualStud />} /> 
        <Route path='/Search' element= { <StudentSearchResult />} />
         <Route path='/About-us' element={<AboutUsPage />}/>
-        <Route path='/' element={<Navigate to="/Home"/>}
+        <Route path='/' element={<Navigate to="/Home"/>} />
       </Routes>
         <Switch className='switch' onChange={toggleTheme} />
     </div>
