@@ -24,13 +24,13 @@ const UpdateReg = () => {
     
     useEffect(()=>{
          if(filter.length != 0 && searchTerm.length != 0){
-           eventUrl = `https://fblaprojfront.onrender.com/Register/api/MERN/Events/filter/${filter},${searchTerm}`
+           eventUrl = `https://long-nation-371823.uc.r.appspot.com//api/MERN/Events/filter/${filter},${searchTerm}`
          }else if(filter.length != 0){
-            eventUrl = `https://fblaprojfront.onrender.com/Register/api/MERN/Events/filter/${filter}`;
+            eventUrl = `https://long-nation-371823.uc.r.appspot.com//api/MERN/Events/filter/${filter}`;
          }else if(searchTerm){
-            eventUrl = `https://fblaprojfront.onrender.com/Register/api/MERN/Events/name/${searchTerm}`
+            eventUrl = `https://long-nation-371823.uc.r.appspot.com//api/MERN/Events/name/${searchTerm}`
          }else{
-            eventUrl = `https://fblaprojfront.onrender.com/Register/api/MERN/Events`
+            eventUrl = `https://long-nation-371823.uc.r.appspot.com//api/MERN/Events`
          } 
          console.log(eventUrl)
         fetch(eventUrl)
@@ -108,7 +108,7 @@ const UpdateReg = () => {
             setEmail('')}, 800)
         
         
-        fetch('https://fblaprojfront.onrender.com/Register/api/MERN/Students/', {
+        fetch('https://long-nation-371823.uc.r.appspot.com//api/MERN/Students/', {
             method : 'POST',
         headers: { 'Content-Type' : 'application/json'},
         body: JSON.stringify(student)
