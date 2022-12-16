@@ -1,5 +1,5 @@
 import {  useState, createContext } from 'react';
-import { BrowserRouter, Routes, Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import Navigation from './views/components/Navigation'
 import HomePage from './views/HomePage';
 import './cssRes/app.css'
@@ -54,6 +54,7 @@ function App() {
         <Route path='/Student/:id' element={ <PreIndividualStud />} /> 
        <Route path='/Search' element= { <StudentSearchResult />} />
         <Route path='/About-us' element={<AboutUsPage />}/>
+        <Route path='/' element={<Navigate to="/Home"/>}
       </Routes>
         <Switch className='switch' onChange={toggleTheme} />
     </div>
