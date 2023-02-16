@@ -24,16 +24,15 @@ const UpdateReg = () => {
     
     useEffect(()=>{
          if(filter.length != 0 && searchTerm.length != 0){
-           eventUrl = `https://long-nation-371823.uc.r.appspot.com//api/MERN/Events/filter/${filter},${searchTerm}`
+           eventUrl = `/api/MERN/Events/filter/${filter},${searchTerm}`
          }else if(filter.length != 0){
-            eventUrl = `https://long-nation-371823.uc.r.appspot.com//api/MERN/Events/filter/${filter}`;
+            eventUrl = `/api/MERN/Events/filter/${filter}`;
          }else if(searchTerm){
-            eventUrl = `https://long-nation-371823.uc.r.appspot.com//api/MERN/Events/name/${searchTerm}`
+            eventUrl = `/api/MERN/Events/name/${searchTerm}`
          }else{
-            eventUrl = `https://long-nation-371823.uc.r.appspot.com//api/MERN/Events`
-         } 
-         console.log(eventUrl)
-        fetch(eventUrl)
+            eventUrl = `/api/MERN/Events`
+         }
+        fetch(process.env.REACT_APP_BASE_URL != null ? process.env.REACT_APP_BASE_URL + eventUrl : eventUrl)
         .then(res =>{ return res.json()})
         .then(data => {
             setActivities(data)
@@ -108,7 +107,7 @@ const UpdateReg = () => {
             setEmail('')}, 800)
         
         
-        fetch('https://long-nation-371823.uc.r.appspot.com//api/MERN/Students/', {
+        fetch('/api/MERN/Students/', {
             method : 'POST',
         headers: { 'Content-Type' : 'application/json'},
         body: JSON.stringify(student)
@@ -151,7 +150,7 @@ const UpdateReg = () => {
                         <select required id="grade" className="input" value = {grade} onChange={(e) =>{
                         setGrade(e.target.value)
                         }}>
-                            <option value="" disabled selected hidden> Grade </option> 
+                            <option defaultValue={6} required selected hidden> Grade </option> 
                             <option value={6}> 6th </option>    
                             <option value={7}> 7th </option>  
                             <option value={8}> 8th </option>  

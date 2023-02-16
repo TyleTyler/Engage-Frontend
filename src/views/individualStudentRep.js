@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 import useFetch from "../useFetch";
 
@@ -13,6 +14,13 @@ const StudentReportPage = ({student, activities}) => {
         let nDate = new Date(date)
         return (nDate).toLocaleDateString()
     }
+    const homeRedirect = useNavigate()
+
+    const deleteStud = () =>{
+        fetch((process.env.REACT_APP_BASE_URL != null? `${process.env.REACT_APP_BASE_URL}/api/MERN/Students/${student._id}` :`/api/MERN/Students/${student._id}` ), {method: "DELETE"})
+        homeRedirect("/Home")
+    }
+
 
 return ( 
 <div className="individualStud">
@@ -28,6 +36,8 @@ return (
                 </span>
                 <input type="text" readOnly className="input" placeholder="Date of Birth" value={toDate(student .dob)} />
                 <input type="text" readOnly className="input" placeholder="E-mail" value={student.email} />
+                    {/* //*This component will allow users to delete individuals students */}
+                <button className="deleteButton" onClick={()=>{ deleteStud()}} > Delete Student</button>
             </div>
             <div className="studStats">
                 <span className="generalFlex"> 
@@ -128,7 +138,6 @@ return (
             </div>
         </div>
        }
-    
     </div>);
 }
  

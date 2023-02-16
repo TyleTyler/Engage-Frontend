@@ -302,6 +302,24 @@ ul{
     -moz-box-shadow: -7px 8px 35px -12px rgba(0,0,0,0.99) ;
 }
 
+.deleteButton{
+    margin: auto 0%;
+    width: 40%;
+    height: 10%;
+    background: #890808;
+    border-radius: 42px;
+    border-style: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FDFDFD;
+    cursor: hover;
+}
 
 #dark .centerBody{
     display: flex;
@@ -828,10 +846,10 @@ ul{
     display: flex;
     column-gap: 5%;
 }
-#dark .basicInfo{
+.basicInfo{
     margin-left: 2%;
     width: 40%;
-    height: 65%;
+    height: 76%;
     display: flex;
     flex-direction: column;
     row-gap: 9%;
@@ -1778,14 +1796,7 @@ ul{
     display: flex;
     column-gap: 5%;
 }
-#light .basicInfo{
-    margin-left: 2%;
-    width: 40%;
-    height: 65%;
-    display: flex;
-    flex-direction: column;
-    row-gap: 9%;
-}
+
 #light .studInfo .input{
     background: #FFFFFF;
 }

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const PreStudentEvents = ({student}) => {
     const [data, setData ] = useState(null)
     useEffect(()=>{
-        fetch(`https://long-nation-371823.uc.r.appspot.com//api/MERN/Events/List/${student.eventsAttended.join(".")}`).then(e=>{return e.json()})
+        fetch((process.env.REACT_APP_BASE_URL != null ?  `${process.env.REACT_APP_BASE_URL}/api/MERN/Events/List/${student.eventsAttended.join(".")}` : `/api/MERN/Events/List/${student.eventsAttended.join(".")}`)).then(e=>{return e.json()})
         .then(data => {
             setData(data)
             console.log(data)}

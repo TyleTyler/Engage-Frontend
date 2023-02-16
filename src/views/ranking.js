@@ -16,15 +16,15 @@ const Ranking = () => {
     const [searchTerm, setSearchTerm] = useState("")
     useEffect( ()=>{ 
         if(filter.length != 0 && searchTerm.length != 0){
-            studUrl = `https://long-nation-371823.uc.r.appspot.com//api/MERN/Students/filter/${filter},${searchTerm}`
+            studUrl = `/api/MERN/Students/filter/${filter},${searchTerm}`
           }else if(filter.length != 0){
-             studUrl = `https://long-nation-371823.uc.r.appspot.com//api/MERN/Students/filter/${filter}`;
+             studUrl = `/api/MERN/Students/filter/${filter}`;
           }else if(searchTerm.length != 0){
-             studUrl = `https://long-nation-371823.uc.r.appspot.com//api/MERN/Students/filter/points.-1,${searchTerm}`
+             studUrl = `/api/MERN/Students/filter/points.-1,${searchTerm}`
           }else{
-             studUrl = `https://long-nation-371823.uc.r.appspot.com//api/MERN/Students/filter/points.-1` 
+             studUrl = `/api/MERN/Students/filter/points.-1` 
           } 
-        fetch(studUrl)
+        fetch(process.env.REACT_APP_BASE_URL != null ?  process.env.REACT_APP_BASE_URL + studUrl :  studUrl)
         .then( res =>{ return res.json()})
         .then( data =>{
             if(rankState.length == 0){

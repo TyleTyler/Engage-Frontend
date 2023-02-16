@@ -10,9 +10,8 @@ let useFetch = (url) =>{
     const [data, setData] = useState(null)
     const [isPending, setPending] = useState(true)
 
-
     useEffect(()=>{
-        fetch("https://long-nation-371823.uc.r.appspot.com/" + url ).then(res =>{
+        fetch((process.env.REACT_APP_BASE_URL != null ? process.env.REACT_APP_BASE_URL + url : url)).then(res =>{
             if(!res.ok){
                 throw Error('Could not get data')
             }

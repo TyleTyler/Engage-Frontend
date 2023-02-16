@@ -8,7 +8,7 @@ const FutureEvents = ({futureData}) => {
 
 
 
-    const {futureEvents } = futureData //Throws error reading "null"  
+    const {futureEvents} = futureData //Throws error reading "null"  
 
     return ( 
     <div className="homebox">

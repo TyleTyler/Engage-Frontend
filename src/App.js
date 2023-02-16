@@ -27,7 +27,6 @@ function App() {
   const toggleTheme = () =>{
     setTheme((theme === 'dark' ? 'light' : "dark"))
   }
-  
   const PurpSwitch = styled(Switch)(({ theme }) => ({
     '& .MuiSwitch-switchBase.Mui-checked': {
       color: purple[200],
